@@ -75,19 +75,19 @@ export async function generateEmbedding(text: string): Promise<number[]> {
       // Verify dimension
       if (embedding.length !== 768) {
         throw new Error(`Expected 768 dimensions, got ${embedding.length}`);
-      }
+    }
 
       console.log(`✅ Embedding generated successfully (${embedding.length} dimensions)`);
-      
-      return embedding;
+
+    return embedding;
 
     } catch (error: any) {
       console.error(`❌ Attempt ${attempt} failed:`, error.message || error);
       
       if (attempt === maxRetries) {
         console.error('❌ Jina AI embedding generation failed after all retries');
-        throw error;
-      }
+    throw error;
+  }
       
       // Exponential backoff for retries
       const delay = Math.pow(2, attempt) * 2000;
