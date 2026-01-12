@@ -16,7 +16,7 @@ export function ManualPipelineTrigger() {
     setResult(null);
 
     try {
-      const cronSecret = process.env.CRON_SECRET;
+      const cronSecret = process.env.NEXT_PUBLIC_CRON_SECRET;
       
       const response = await fetch('/api/cron/run-pipeline', {
         method: 'POST',
@@ -29,9 +29,12 @@ export function ManualPipelineTrigger() {
       const data = await response.json();
 
       if (response.ok) {
+        const jobsScraped = data.scraped?.jobsScraped || 0;
+        const jobsProcessed = data.processed?.success || 0;
+        
         setResult({
           success: true,
-          message: `✅ Success! ${data.summary?.jobsScraped || 0} jobs scraped, ${data.summary?.jobsProcessed || 0} processed`
+          message: `✅ Success! ${jobsScraped} jobs scraped, ${jobsProcessed} processed`
         });
       } else {
         setResult({
