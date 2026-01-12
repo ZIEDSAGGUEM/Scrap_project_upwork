@@ -23,7 +23,7 @@ export async function sendTelegramNotification(
     return;
   }
 
-  const threshold = parseInt(process.env.NOTIFICATION_SCORE_THRESHOLD || '65');
+  const threshold = parseInt(process.env.NOTIFICATION_SCORE_THRESHOLD || '20');
   if (score < threshold) {
     console.log(`ℹ️ Score ${score}% below threshold ${threshold}%, skipping notification`);
     return;

@@ -75,7 +75,7 @@ export async function processJobs() {
       console.log(`  - 🎯 Final relevance score: ${scores.relevance_score}`);
 
       // 📱 Send Telegram notification if high score
-      if (scores.relevance_score >= 65) {
+      if (scores.relevance_score >= parseInt(process.env.NOTIFICATION_SCORE_THRESHOLD || '20')) {
         console.log('  - 📱 High score! Sending Telegram notification...');
         try {
           await sendTelegramNotification({
