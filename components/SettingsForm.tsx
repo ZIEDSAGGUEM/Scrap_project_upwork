@@ -155,7 +155,7 @@ export function SettingsForm({ initialPreferences }: SettingsFormProps) {
           onChange={(e) => setNewSkill(e.target.value)}
           onKeyDown={handleAddSkill}
           placeholder="Type a skill and press Enter (e.g., React, Node.js)"
-          className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent mb-4"
+          className="w-full text-black px-4 py-3 border-2 border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent mb-4"
         />
 
         <div className="flex flex-wrap gap-2">
@@ -206,7 +206,7 @@ export function SettingsForm({ initialPreferences }: SettingsFormProps) {
           onChange={(e) => setMinBudget(Number(e.target.value))}
           min="0"
           step="50"
-          className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 mb-2"
+          className="w-full text-black px-4 py-3 border-2 border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 mb-2"
         />
         <p className="text-sm text-blue-600 font-semibold">
           Minimum: ${minBudget.toLocaleString()}
@@ -233,7 +233,7 @@ export function SettingsForm({ initialPreferences }: SettingsFormProps) {
           onChange={(e) => setNewCountry(e.target.value)}
           onKeyDown={handleAddCountry}
           placeholder="Type a country and press Enter (e.g., United States)"
-          className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 mb-4"
+          className="w-full text-black px-4 py-3 border-2 border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 mb-4"
         />
 
         <div className="flex flex-wrap gap-2">
