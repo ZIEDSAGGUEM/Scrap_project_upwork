@@ -5,6 +5,7 @@
 
 import { supabaseAdmin } from '@/lib/supabase/admin';
 import { SettingsForm } from '@/components/SettingsForm';
+import { ManualPipelineTrigger } from '@/components/ManualPipelineTrigger';
 import Link from 'next/link';
 
 export const dynamic = 'force-dynamic';
@@ -53,6 +54,11 @@ export default async function SettingsPage() {
                   </p>
                 </div>
               </div>
+            </div>
+
+            {/* Manual Pipeline Trigger */}
+            <div className="mb-8">
+              <ManualPipelineTrigger />
             </div>
 
             <SettingsForm
@@ -107,6 +113,11 @@ export default async function SettingsPage() {
                 {preferences.preferred_countries?.length || 0}
               </p>
             </div>
+          </div>
+
+          {/* Manual Pipeline Trigger */}
+          <div className="mb-8">
+            <ManualPipelineTrigger />
           </div>
 
           <SettingsForm initialPreferences={preferences} />
